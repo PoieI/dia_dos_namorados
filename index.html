@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pericles &amp; Alessandra · 12/06</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <!-- TELA DE ENTRADA -->
+    <div class="entry-screen" id="entryScreen">
+      <canvas class="entry-stars" id="entryStars" aria-hidden="true"></canvas>
+      <div class="entry-mist" aria-hidden="true">
+        <span class="mist-layer ml1"></span>
+        <span class="mist-layer ml2"></span>
+        <span class="mist-layer ml3"></span>
+      </div>
+      <div class="entry-title">
+        <p class="entry-date">12 de junho · Dia dos Namorados</p>
+        <h1 class="entry-names">Pericles <span>&amp;</span> Alessandra</h1>
+      </div>
+
+      <!-- CENA DA PORTA -->
+      <div class="door-scene" id="doorScene">
+        <div class="wall-bg" aria-hidden="true"></div>
+
+        <svg class="door-svg" id="doorSvg"
+             viewBox="0 0 340 440"
+             xmlns="http://www.w3.org/2000/svg"
+             role="img" aria-label="Porta do Castelo Animado — clique para entrar">
+          <defs>
+            <linearGradient id="stoneArch" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"   stop-color="#cec8b0"/>
+              <stop offset="50%"  stop-color="#b8b09a"/>
+              <stop offset="100%" stop-color="#9a9080"/>
+            </linearGradient>
+            <linearGradient id="woodGrad" x1="0%" y1="0%" x2="8%" y2="100%">
+              <stop offset="0%"   stop-color="#6b4a28"/>
+              <stop offset="35%"  stop-color="#4e3218"/>
+              <stop offset="70%"  stop-color="#3a2410"/>
+              <stop offset="100%" stop-color="#2a1808"/>
+            </linearGradient>
+            <linearGradient id="woodLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"  stop-color="#7a5530"/>
+              <stop offset="100%" stop-color="#4e3218"/>
+            </linearGradient>
+            <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#b8a870"/>
+              <stop offset="50%"  stop-color="#c8b878"/>
+              <stop offset="100%" stop-color="#d0c080"/>
+            </linearGradient>
+            <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"   stop-color="#a89878"/>
+              <stop offset="100%" stop-color="#8a7a60"/>
+            </linearGradient>
+            <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"  stop-color="rgba(180,210,240,0.7)"/>
+              <stop offset="100%" stop-color="rgba(140,180,220,0.5)"/>
+            </linearGradient>
+            <linearGradient id="interiorSky" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"   stop-color="#a8d4e8"/>
+              <stop offset="60%"  stop-color="#c8e8b0"/>
+              <stop offset="100%" stop-color="#6aaa50"/>
+            </linearGradient>
+            <linearGradient id="doorShadow" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="rgba(0,0,0,0.55)"/>
+              <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+            </linearGradient>
+            <radialGradient id="dialCenter" cx="50%" cy="40%" r="60%">
+              <stop offset="0%"  stop-color="#e8a030"/>
+              <stop offset="100%" stop-color="#6a3a08"/>
+            </radialGradient>
+            <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+              <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="rgba(0,0,0,0.45)"/>
+            </filter>
+            <filter id="softShadow" x="-5%" y="-5%" width="120%" height="120%">
+              <feDropShadow dx="1" dy="2" stdDeviation="2.5" flood-color="rgba(0,0,0,0.3)"/>
+            </filter>
+            <!-- clip path para o vão da porta -->
+            <clipPath id="doorClip">
+              <path d="M108,400 L108,195 Q108,98 170,98 Q232,98 232,195 L232,400 Z"/>
+            </clipPath>
+            <!-- clip para o dial -->
+            <clipPath id="dialClip2">
+              <circle cx="30" cy="30" r="28"/>
+            </clipPath>
+          </defs>
+
+          <!-- PISO -->
+          <rect x="0" y="398" width="340" height="42" fill="url(#floorGrad)"/>
+          <g stroke="#8a7a5a" stroke-width="0.8" opacity="0.6">
+            <line x1="0" y1="412" x2="340" y2="412"/><line x1="0" y1="425" x2="340" y2="425"/>
+            <line x1="60" y1="398" x2="60" y2="440"/><line x1="130" y1="398" x2="130" y2="440"/>
+            <line x1="200" y1="398" x2="200" y2="440"/><line x1="270" y1="398" x2="270" y2="440"/>
+          </g>
+          <rect x="90" y="393" width="160" height="10" fill="#c8b890" rx="2"/>
+          <rect x="90" y="393" width="160" height="3" fill="#e0d0a8" rx="2"/>
+
+          <!-- PAREDE ESQUERDA -->
+          <rect x="0" y="0" width="90" height="400" fill="url(#wallGrad)"/>
+          <g stroke="#a09060" stroke-width="0.4" opacity="0.3">
+            <line x1="0" y1="60" x2="90" y2="60"/><line x1="0" y1="130" x2="90" y2="130"/>
+            <line x1="0" y1="200" x2="90" y2="200"/><line x1="0" y1="270" x2="90" y2="270"/>
+            <line x1="0" y1="340" x2="90" y2="340"/>
+            <line x1="30" y1="0" x2="30" y2="400"/><line x1="65" y1="0" x2="65" y2="400"/>
+          </g>
+          <rect x="70" y="0" width="20" height="400" fill="rgba(0,0,0,0.12)"/>
+
+          <!-- PAREDE DIREITA -->
+          <rect x="250" y="0" width="90" height="400" fill="url(#wallGrad)"/>
+          <g stroke="#a09060" stroke-width="0.4" opacity="0.3">
+            <line x1="250" y1="60" x2="340" y2="60"/><line x1="250" y1="130" x2="340" y2="130"/>
+            <line x1="250" y1="200" x2="340" y2="200"/><line x1="250" y1="270" x2="340" y2="270"/>
+            <line x1="250" y1="340" x2="340" y2="340"/>
+            <line x1="280" y1="0" x2="280" y2="400"/><line x1="315" y1="0" x2="315" y2="400"/>
+          </g>
+          <rect x="250" y="0" width="20" height="400" fill="rgba(0,0,0,0.12)"/>
+
+          <!-- MOLDURA DO ARCO (pedra cinza-creme) -->
+          <path d="M88,400 L88,185 Q88,78 170,78 Q252,78 252,185 L252,400 L232,400 L232,195 Q232,98 170,98 Q108,98 108,195 L108,400 Z"
+                fill="url(#stoneArch)" filter="url(#shadow)"/>
+          <path d="M88,185 Q88,78 170,78 Q252,78 252,185" fill="none" stroke="#ddd8c0" stroke-width="3"/>
+          <path d="M232,195 Q232,98 170,98 Q108,98 108,195" fill="none" stroke="rgba(0,0,0,0.18)" stroke-width="4"/>
+          <g stroke="#a09878" stroke-width="1" opacity="0.55" fill="none">
+            <path d="M155,82 Q170,76 185,82"/>
+            <path d="M142,90 Q156,82 170,82 Q184,82 198,90"/>
+            <path d="M130,106 Q145,92 165,88 Q185,88 200,96 Q215,105 220,118"/>
+            <path d="M118,128 Q130,108 148,100"/>
+            <line x1="88"  y1="155" x2="110" y2="148"/><line x1="88"  y1="200" x2="108" y2="200"/>
+            <line x1="88"  y1="255" x2="108" y2="255"/><line x1="88"  y1="310" x2="108" y2="310"/>
+            <line x1="88"  y1="360" x2="108" y2="360"/>
+            <line x1="252" y1="155" x2="230" y2="148"/><line x1="252" y1="200" x2="232" y2="200"/>
+            <line x1="252" y1="255" x2="232" y2="255"/><line x1="252" y1="310" x2="232" y2="310"/>
+            <line x1="252" y1="360" x2="232" y2="360"/>
+          </g>
+
+          <!-- INTERIOR (paisagem verde, atrás da porta) -->
+          <g clip-path="url(#doorClip)" id="doorInteriorGroup" style="opacity:0">
+            <rect x="108" y="98" width="124" height="302" fill="url(#interiorSky)"/>
+            <path d="M108,320 Q135,275 162,290 Q185,265 210,282 Q220,270 232,278 L232,400 L108,400 Z" fill="#5a9850" opacity="0.85"/>
+            <path d="M108,355 Q130,330 155,342 Q178,320 205,335 Q220,325 232,330 L232,400 L108,400 Z" fill="#4a8840" opacity="0.9"/>
+            <circle cx="125" cy="358" r="3" fill="#f6d36f" opacity="0.8"/>
+            <circle cx="148" cy="350" r="2.5" fill="#e8c8f0" opacity="0.8"/>
+            <circle cx="170" cy="362" r="3" fill="#fff" opacity="0.7"/>
+            <circle cx="195" cy="348" r="2.5" fill="#f6d36f" opacity="0.8"/>
+            <circle cx="218" cy="355" r="3" fill="#e8c8f0" opacity="0.8"/>
+            <ellipse cx="155" cy="145" rx="28" ry="10" fill="white" opacity="0.65"/>
+            <ellipse cx="145" cy="150" rx="18" ry="8"  fill="white" opacity="0.55"/>
+            <ellipse cx="168" cy="148" rx="14" ry="7"  fill="white" opacity="0.5"/>
+          </g>
+          <!-- sombra interna ao abrir -->
+          <rect x="108" y="98" width="40" height="302"
+                fill="url(#doorShadow)" id="doorOpenShadow"
+                clip-path="url(#doorClip)" style="opacity:0"/>
+
+          <!-- ══════════════════════════════════════
+               PAINEL DA PORTA
+               transform-origin DEVE ser a borda esquerda da porta: x=108
+               Em SVG usamos transform com a coordenada absoluta
+          ══════════════════════════════════════ -->
+          <!--
+            Estratégia: o <g> usa translate(108,249) para mover origem para
+            a dobradiça, depois os elementos dentro são desenhados com x relativo.
+            Na abertura via JS aplicamos rotateY no CSS com transform-origin:left center.
+            O clip-path do painel usa o shape exato da porta.
+          -->
+          <g id="doorPanelWrapper">
+            <!-- O painel é um foreignObject não funciona em SVG puro para 3D.
+                 Usamos uma abordagem diferente: o painel é um elemento SVG normal
+                 mas a animação é feita com CSS transform com transform-origin correto. -->
+            <g id="doorPanel" style="transform-origin:108px 249px; transform:perspective(600px) rotateY(0deg);">
+              <!-- corpo da porta -->
+              <path id="doorPanelShape"
+                    d="M108,400 L108,195 Q108,98 170,98 Q232,98 232,195 L232,400 Z"
+                    fill="url(#woodGrad)"/>
+              <!-- faixa clara esquerda -->
+              <path d="M108,400 L108,195 Q108,98 170,98 L170,400 Z"
+                    fill="url(#woodLeft)" opacity="0.5"/>
+              <!-- janela arqueada -->
+              <path d="M128,188 Q128,118 170,118 Q212,118 212,188 L212,200 L128,200 Z" fill="url(#glassGrad)"/>
+              <g stroke="#4a3420" stroke-width="2.5" fill="none">
+                <line x1="152" y1="118" x2="152" y2="200"/>
+                <line x1="170" y1="118" x2="170" y2="200"/>
+                <line x1="188" y1="118" x2="188" y2="200"/>
+                <line x1="128" y1="165" x2="212" y2="165"/>
+                <line x1="128" y1="183" x2="212" y2="183"/>
+              </g>
+              <path d="M125,188 Q125,115 170,115 Q215,115 215,188 L215,203 L125,203 Z"
+                    fill="none" stroke="#3a2410" stroke-width="4"/>
+              <line x1="125" y1="203" x2="215" y2="203" stroke="#3a2410" stroke-width="4"/>
+              <!-- ferrolho superior -->
+              <rect x="116" y="248" width="108" height="14" rx="3" fill="#2a2018" stroke="#1a1008" stroke-width="1"/>
+              <rect x="116" y="248" width="108" height="5"  rx="2" fill="#4a3828" opacity="0.6"/>
+              <circle cx="128" cy="255" r="5" fill="#3a3020" stroke="#1a1008" stroke-width="1"/>
+              <circle cx="128" cy="255" r="2.5" fill="#5a4838"/>
+              <circle cx="212" cy="255" r="5" fill="#3a3020" stroke="#1a1008" stroke-width="1"/>
+              <circle cx="212" cy="255" r="2.5" fill="#5a4838"/>
+              <!-- ferrolho inferior -->
+              <rect x="116" y="310" width="108" height="14" rx="3" fill="#2a2018" stroke="#1a1008" stroke-width="1"/>
+              <rect x="116" y="310" width="108" height="5"  rx="2" fill="#4a3828" opacity="0.6"/>
+              <circle cx="128" cy="317" r="5" fill="#3a3020" stroke="#1a1008" stroke-width="1"/>
+              <circle cx="128" cy="317" r="2.5" fill="#5a4838"/>
+              <circle cx="212" cy="317" r="5" fill="#3a3020" stroke="#1a1008" stroke-width="1"/>
+              <circle cx="212" cy="317" r="2.5" fill="#5a4838"/>
+              <!-- maçaneta dourada -->
+              <circle cx="216" cy="290" r="10" fill="#c9a97a"/>
+              <circle cx="216" cy="290" r="10" fill="none" stroke="#7a5c30" stroke-width="1.5"/>
+              <ellipse cx="213" cy="287" rx="3.5" ry="2.5" fill="rgba(255,245,200,0.55)"/>
+              <!-- dobradiças (decorativas, lado esquerdo) -->
+              <rect x="106" y="150" width="8" height="22" rx="2" fill="#3a3020" stroke="#1a1008" stroke-width="0.8"/>
+              <rect x="106" y="340" width="8" height="22" rx="2" fill="#3a3020" stroke="#1a1008" stroke-width="0.8"/>
+            </g>
+          </g>
+
+          <!-- ══════════════════════════════════════
+               DIAL MÁGICO — base estática + ponteiro separado
+               O dial fica na parede direita, posição absoluta
+          ══════════════════════════════════════ -->
+          <!-- BASE DO DIAL (não se move) -->
+          <g id="dialBase" transform="translate(272, 180)">
+            <circle cx="30" cy="30" r="33" fill="rgba(0,0,0,0.2)" transform="translate(3,4)"/>
+            <circle cx="30" cy="30" r="31" fill="#1a1808" stroke="#0a0a08" stroke-width="2"/>
+            <g clip-path="url(#dialClip2)">
+              <path d="M30,30 L2,30 L2,2 Q2,2 30,2 Z"   fill="#3a9030"/>
+              <path d="M30,30 L30,2 Q58,2 58,30 Z"        fill="#c03838"/>
+              <path d="M30,30 L58,30 Q58,58 30,58 Z"      fill="#3070b8"/>
+              <path d="M30,30 L30,58 L2,58 Q2,30 2,30 Z"  fill="#0a0808"/>
+            </g>
+            <!-- brilhos -->
+            <path d="M30,30 L2,30 L2,2 Q2,2 30,2 Z"    fill="rgba(255,255,255,0.12)" clip-path="url(#dialClip2)"/>
+            <path d="M30,30 L58,30 Q58,58 30,58 Z"       fill="rgba(255,255,255,0.08)" clip-path="url(#dialClip2)"/>
+            <!-- linhas divisórias -->
+            <line x1="2" y1="30" x2="58" y2="30" stroke="rgba(0,0,0,0.6)" stroke-width="2"/>
+            <line x1="30" y1="2" x2="30" y2="58" stroke="rgba(0,0,0,0.6)" stroke-width="2"/>
+            <!-- centro (estático) -->
+            <circle cx="30" cy="30" r="7" fill="url(#dialCenter)" stroke="#4a2a08" stroke-width="1.5"/>
+            <circle cx="30" cy="30" r="4" fill="#e8a030"/>
+            <ellipse cx="28" cy="28" rx="2" ry="1.5" fill="rgba(255,245,200,0.5)"/>
+          </g>
+
+          <!-- PONTEIRO DO DIAL (gira independentemente, começa apontando p/ vermelho → vai p/ verde) -->
+          <!--
+            O ponteiro precisa girar em torno do centro do dial: (272+30, 180+30) = (302, 210)
+            Começa em ~45deg (vermelho), vai para ~-45deg (verde, quadrante superior-esquerdo)
+          -->
+          <g id="dialPointer"
+             style="transform-origin: 302px 210px; transform: rotate(45deg);">
+            <path d="M302,182 L298,194 L302,192 L306,194 Z" fill="#1a1808" stroke="#0a0808" stroke-width="0.8"/>
+            <circle cx="302" cy="182" r="4.5" fill="#1a1808" stroke="#0a0808" stroke-width="1"/>
+            <circle cx="302" cy="182" r="2.5" fill="#3a3828"/>
+          </g>
+
+          <!-- Zona clicável da porta -->
+          <path d="M108,400 L108,195 Q108,98 170,98 Q232,98 232,195 L232,400 Z"
+                id="doorHoverZone" fill="transparent" cursor="pointer" style="cursor:pointer"/>
+        </svg>
+
+        <p class="door-hint" id="doorHint">
+          <span class="hint-star">✦</span>
+          Clique na porta para entrar
+          <span class="hint-star">✦</span>
+        </p>
+      </div><!-- /door-scene -->
+
+      <div class="float-stars" aria-hidden="true">
+        <span class="fs s1">✦</span><span class="fs s2">✧</span>
+        <span class="fs s3">✦</span><span class="fs s4">✧</span>
+        <span class="fs s5">✦</span><span class="fs s6">✧</span>
+      </div>
+    </div><!-- /entry-screen -->
+
+    <!-- Portal de transição -->
+    <div class="portal-overlay" id="portalOverlay" aria-hidden="true">
+      <div class="portal-circle" id="portalCircle"></div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="main-content" id="mainContent" aria-hidden="true">
+
+      <!-- Fundo de colinas Ghibli -->
+      <div class="ghibli-bg" aria-hidden="true">
+        <svg class="bg-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bgSky" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"  stop-color="#c8e8f5"/><stop offset="40%" stop-color="#a8d4e8"/><stop offset="100%" stop-color="#c0e0a8"/>
+            </linearGradient>
+            <linearGradient id="bgHillFar"  x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8ec87a"/><stop offset="100%" stop-color="#5a9060"/></linearGradient>
+            <linearGradient id="bgHillMid"  x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#5a9850"/><stop offset="100%" stop-color="#3d7840"/></linearGradient>
+            <linearGradient id="bgHillNear" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#4a8840"/><stop offset="100%" stop-color="#2d6030"/></linearGradient>
+            <linearGradient id="bgGround"   x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3d7038"/><stop offset="100%" stop-color="#2a5028"/></linearGradient>
+            <filter id="cBlur"><feGaussianBlur stdDeviation="3"/></filter>
+          </defs>
+          <rect width="1440" height="900" fill="url(#bgSky)"/>
+          <ellipse cx="200"  cy="140" rx="160" ry="52" fill="white" opacity="0.72" filter="url(#cBlur)"/>
+          <ellipse cx="165"  cy="155" rx="120" ry="40" fill="white" opacity="0.58" filter="url(#cBlur)"/>
+          <ellipse cx="720"  cy="100" rx="195" ry="58" fill="white" opacity="0.65" filter="url(#cBlur)"/>
+          <ellipse cx="685"  cy="114" rx="145" ry="43" fill="white" opacity="0.52" filter="url(#cBlur)"/>
+          <ellipse cx="1250" cy="128" rx="178" ry="56" fill="white" opacity="0.68" filter="url(#cBlur)"/>
+          <ellipse cx="480"  cy="78"  rx="88"  ry="26" fill="white" opacity="0.58" filter="url(#cBlur)"/>
+          <path d="M-50,430 Q360,400 720,415 Q1080,398 1490,412 L1490,465 L-50,465 Z" fill="rgba(200,232,245,0.42)"/>
+          <path d="M-50,480 Q150,320 350,368 Q550,308 720,358 Q900,298 1100,348 Q1280,308 1490,378 L1490,900 L-50,900 Z" fill="url(#bgHillFar)" opacity="0.62"/>
+          <path d="M-50,448 Q360,428 720,440 Q1080,425 1490,438 L1490,488 L-50,488 Z" fill="rgba(200,232,245,0.38)"/>
+          <path d="M-50,558 Q100,458 250,498 Q400,448 550,488 Q700,443 850,478 Q1000,443 1150,473 Q1300,453 1490,488 L1490,900 L-50,900 Z" fill="url(#bgHillMid)" opacity="0.88"/>
+          <path d="M-50,528 Q360,508 720,522 Q1080,506 1490,520 L1490,560 L-50,560 Z" fill="rgba(200,232,245,0.35)"/>
+          <path d="M-50,658 Q80,578 200,608 Q320,568 460,593 Q600,558 740,583 Q880,556 1020,580 Q1160,560 1300,576 Q1400,563 1490,573 L1490,900 L-50,900 Z" fill="url(#bgHillNear)"/>
+          <g opacity="0.75">
+            <circle cx="180" cy="633" r="4" fill="#e8c8f0"/><circle cx="220" cy="626" r="3" fill="#f6d36f"/>
+            <circle cx="340" cy="616" r="4" fill="#e8c8f0"/><circle cx="380" cy="610" r="3" fill="#fff"/>
+            <circle cx="500" cy="606" r="4.5" fill="#f6d36f"/><circle cx="540" cy="600" r="3" fill="#e8c8f0"/>
+            <circle cx="660" cy="596" r="4" fill="#fff"/><circle cx="700" cy="603" r="3" fill="#f6d36f"/>
+            <circle cx="820" cy="593" r="4" fill="#e8c8f0"/><circle cx="860" cy="598" r="3" fill="#fff"/>
+            <circle cx="980" cy="588" r="4.5" fill="#f6d36f"/><circle cx="1020" cy="595" r="3" fill="#e8c8f0"/>
+            <circle cx="1140" cy="586" r="4" fill="#fff"/><circle cx="1180" cy="593" r="3" fill="#f6d36f"/>
+            <circle cx="1300" cy="580" r="4" fill="#e8c8f0"/><circle cx="1340" cy="587" r="3" fill="#fff"/>
+          </g>
+          <path d="M-50,798 Q360,758 720,775 Q1080,755 1490,768 L1490,900 L-50,900 Z" fill="url(#bgGround)"/>
+          <g opacity="0.9">
+            <circle cx="100" cy="808" r="5.5" fill="#e8c8f0"/><circle cx="150" cy="803" r="5" fill="#f6d36f"/>
+            <circle cx="200" cy="810" r="6" fill="#fff"/><circle cx="280" cy="800" r="5" fill="#e8c8f0"/>
+            <circle cx="360" cy="806" r="6.5" fill="#f6d36f"/><circle cx="440" cy="798" r="5" fill="#fff"/>
+            <circle cx="520" cy="804" r="5.5" fill="#e8c8f0"/><circle cx="600" cy="797" r="5" fill="#f6d36f"/>
+            <circle cx="680" cy="802" r="6.5" fill="#fff"/><circle cx="760" cy="796" r="5" fill="#f6d36f"/>
+            <circle cx="840" cy="801" r="5.5" fill="#e8c8f0"/><circle cx="920" cy="795" r="5" fill="#fff"/>
+            <circle cx="1000" cy="799" r="6" fill="#f6d36f"/><circle cx="1080" cy="793" r="5" fill="#e8c8f0"/>
+            <circle cx="1160" cy="797" r="5.5" fill="#fff"/><circle cx="1240" cy="791" r="5" fill="#f6d36f"/>
+            <circle cx="1320" cy="795" r="6.5" fill="#e8c8f0"/><circle cx="1400" cy="789" r="5" fill="#fff"/>
+          </g>
+          <path d="M-50,868 Q720,848 1490,860 L1490,900 L-50,900 Z" fill="rgba(200,232,245,0.28)"/>
+        </svg>
+        <div class="cloud-anim ca1"></div>
+        <div class="cloud-anim ca2"></div>
+        <div class="cloud-anim ca3"></div>
+      </div>
+
+      <!-- névoa -->
+      <div class="fog-wrap" aria-hidden="true">
+        <span class="fog fa"></span>
+        <span class="fog fb"></span>
+        <span class="fog fc"></span>
+      </div>
+
+      <!-- PERSONAGENS FLUTUANTES — imagens reais sem fundo -->
+
+      <!-- Castelo voador — canto superior direito (fixo) -->
+      <div class="float-char char-castle-flying" aria-hidden="true">
+        <img src="img/chars/castle-flying.png" alt="" draggable="false">
+      </div>
+
+      <!-- Castelo terrestre — canto inferior esquerdo (fixo) -->
+      <div class="float-char char-castle-ground" aria-hidden="true">
+        <img src="img/chars/castle-ground.png" alt="" draggable="false">
+      </div>
+
+      <!-- Calcifer — lateral esquerda ~38% -->
+      <div class="float-char char-calcifer" aria-hidden="true">
+        <img src="img/chars/calcifer.png" alt="" draggable="false">
+      </div>
+
+      <!-- Calcifer + frigideira — lateral direita ~65% -->
+      <div class="float-char char-calcifer-pan" aria-hidden="true">
+        <img src="img/chars/calcifer-pan.png" alt="" draggable="false">
+      </div>
+
+      <!-- Heen (cachorro Howl) — lateral direita ~28% -->
+      <div class="float-char char-heen" aria-hidden="true">
+        <img src="img/chars/heen.png" alt="" draggable="false">
+      </div>
+
+      <!-- Espantalho — lateral esquerda ~62% -->
+      <div class="float-char char-turnip" aria-hidden="true">
+        <img src="img/chars/turnip.png" alt="" draggable="false">
+      </div>
+
+      <!-- névoa sobre tudo -->
+      <div class="fog-wrap-top" aria-hidden="true">
+        <span class="fog-top ft1"></span>
+        <span class="fog-top ft2"></span>
+      </div>
+
+      <!-- SLIDESHOW — bloco centralizado -->
+      <section class="slideshow-section" id="galeria" aria-label="Nossa galeria de fotos">
+
+        <!-- Título -->
+        <div class="slideshow-header" aria-hidden="true">
+          <p class="eyebrow-tag">Pericles &amp; Alessandra · 12 de junho</p>
+          <h2>Nossa história em frames</h2>
+        </div>
+
+        <!-- Card centralizado com setas nas laterais -->
+        <div style="position:relative; display:flex; align-items:center; gap:0;">
+
+          <button class="ss-btn ss-prev" id="ssPrev" aria-label="Foto anterior">&#8592;</button>
+
+          <div class="slideshow-wrapper">
+            <div class="slideshow" id="slideshow" aria-live="polite">
+              <div class="slide active" aria-hidden="false"><img src="img/foto1.jpg"  alt="Pericles e Alessandra"></div>
+              <div class="slide"        aria-hidden="true" ><img src="img/foto2.jpg"  alt="Pericles e Alessandra"></div>
+              <div class="slide"        aria-hidden="true" ><img src="img/foto3.jpg"  alt="Pericles e Alessandra"></div>
+              <div class="slide"        aria-hidden="true" ><img src="img/foto4.jpg"  alt="Pericles e Alessandra"></div>
+              <div class="slide"        aria-hidden="true" ><img src="img/foto5.jpg"  alt="Pericles e Alessandra"></div>
+              <div class="slide"        aria-hidden="true" ><img src="img/foto6.jpg"  alt="Pericles e Alessandra"></div>
+              <div class="slide"        aria-hidden="true" ><img src="img/foto7.jpg"  alt="Pericles e Alessandra"></div>
+              <div class="slide"        aria-hidden="true" ><img src="img/foto8.jpg"  alt="Pericles e Alessandra"></div>
+              <div class="slide"        aria-hidden="true" ><img src="img/foto9.jpg"  alt="Pericles e Alessandra"></div>
+              <div class="slide"        aria-hidden="true" ><img src="img/foto10.jpg" alt="Pericles e Alessandra"></div>
+              <div class="slide"        aria-hidden="true" ><img src="img/foto11.jpg" alt="Pericles e Alessandra"></div>
+              <div class="slide"        aria-hidden="true" ><img src="img/foto12.jpg" alt="Pericles e Alessandra"></div>
+            </div>
+          </div>
+
+          <button class="ss-btn ss-next" id="ssNext" aria-label="Próxima foto">&#8594;</button>
+
+        </div>
+
+        <!-- Dots abaixo do card -->
+        <div class="ss-dots" id="ssDots" aria-label="Navegação das fotos"></div>
+
+        <!-- Ornamento -->
+        <div class="ornament-div ss-ornament" aria-hidden="true">
+          <svg viewBox="0 0 300 20" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="10" x2="118" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            <path d="M130,10 L140,3 L150,10 L140,17 Z" fill="currentColor" opacity="0.7"/>
+            <circle cx="150" cy="10" r="3" fill="currentColor" opacity="0.9"/>
+            <path d="M160,10 L170,3 L180,10 L170,17 Z" fill="currentColor" opacity="0.7"/>
+            <line x1="182" y1="10" x2="300" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+          </svg>
+        </div>
+
+      </section>
+
+      <!-- MENSAGEM -->
+      <section class="message-section" id="mensagem" aria-labelledby="mensagem-title">
+        <div class="message-header reveal">
+          <p class="eyebrow-tag">Para Alessandra</p>
+          <h2 id="mensagem-title">Uma carta com o coração</h2>
+        </div>
+        <div class="envelope-stage reveal">
+          <button class="envelope" type="button" aria-expanded="false" aria-controls="love-letter" aria-label="Clique para abrir a carta">
+            <div class="envelope-back"></div>
+            <div class="envelope-flap" aria-hidden="true"></div>
+            <div class="envelope-front" aria-hidden="true"><span class="wax-seal">P &amp; A</span></div>
+            <div class="envelope-prompt" aria-hidden="true">Toque para abrir ✦</div>
+          </button>
+          <article class="letter" id="love-letter" hidden>
+            <div class="letter-paper">
+              <p class="letter-dear">Alessandra,</p>
+              <p>Hoje eu queria te lembrar de uma coisa simples: eu amo viver com você. Amo quando a gente ri sem combinar, quando jogamos junto mesmo com a cozinha explodindo no Overcooked ou passar raiva no lol.</p>
+              <p>Você é meu lugar tranquilo e minha aventura favorita. Se a vida fosse um filme, eu escolheria todas as cenas em que caminho ao seu lado.</p>
+              <p>Feliz Dia dos Namorados, meu amor.</p>
+              <p class="letter-signature">Com amor, Pericles. 🔥</p>
+
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-flame-wrap" aria-hidden="true"><span class="calcifer-flame"><span></span><span></span></span></div>
+          <p class="footer-mark">P &amp; A</p>
+          <p class="footer-text">Feito pensado em você</p>
+          <p class="footer-date">12 de junho — Dia dos Namorados</p>
+        </div>
+      </footer>
+    </div><!-- /main-content -->
+
+
+    <button class="music-btn" id="pauseBtn" type="button" aria-label="Pausar ou tocar música" hidden>
+      <span class="music-flame" aria-hidden="true"><span></span></span>
+      <span class="music-pause-icon" aria-hidden="true">⏸</span>
+    </button>
+
+    <audio id="love-audio" preload="auto" loop>
+      <source src="audio/tema-castelo-animado.m4a" type="audio/mp4">
+    </audio>
+    <script src="js/script.js"></script>
+  </body>
+</html>
